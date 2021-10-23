@@ -3,7 +3,7 @@ import ChartBoard from "../../../components/ChartBoard";
 import TopbarTitle from "../../../components/TopbarTitle";
 import TopList from "../../../components/TopList";
 
-function AdminDashboard(props) {
+function AdminDashboard() {
   return (
     <>
       <TopbarTitle title="Event-15" hasDropdown />

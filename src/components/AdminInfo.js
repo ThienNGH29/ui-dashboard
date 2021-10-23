@@ -14,7 +14,7 @@ function AdminInfo({ classes }) {
   return (
     <div className={classes}>
       <div className="box lg-size">
-        <div className="box-header mb-5">
+        <div className="box-header">
           <div className="title-with-image">
             <div className="ico-wrap">
               <img src="/pencil.png" alt="" />
@@ -25,7 +25,7 @@ function AdminInfo({ classes }) {
         <form>
           <div className="row">
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="first-name"
                   name="first-name"
@@ -39,7 +39,7 @@ function AdminInfo({ classes }) {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="last-name"
                   name="last-name"
@@ -53,7 +53,7 @@ function AdminInfo({ classes }) {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="email"
                   name="email"
@@ -67,7 +67,7 @@ function AdminInfo({ classes }) {
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-end pt-2">
+          <div className="d-flex justify-content-end pt-2 mb-4">
             <button
               type="button"
               className="btn btn-outline-primary custom-save-btn"

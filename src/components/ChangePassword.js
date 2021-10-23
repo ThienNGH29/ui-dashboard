@@ -14,7 +14,7 @@ function ChangePassword({ classes }) {
   return (
     <div className={classes}>
       <div className="box lg-size">
-        <div className="box-header mb-5">
+        <div className="box-header">
           <div className="title-with-image">
             <div className="ico-wrap">
               <img src="/shield.png" alt="" />
@@ -25,7 +25,7 @@ function ChangePassword({ classes }) {
         <form>
           <div className="row">
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="current-password"
                   name="current-password"
@@ -39,7 +39,7 @@ function ChangePassword({ classes }) {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="new-password"
                   name="new-password"
@@ -53,7 +53,7 @@ function ChangePassword({ classes }) {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   id="confirm-password"
                   name="confirm-password"
@@ -71,7 +71,7 @@ function ChangePassword({ classes }) {
             <FaExclamationCircle className="me-2" />
             <span>Leave blank to leave unchanged.</span>
           </div>
-          <div className="d-flex justify-content-end pt-2">
+          <div className="d-flex justify-content-end pt-2 mb-4">
             <button
               type="button"
               className="btn btn-outline-primary custom-save-btn"

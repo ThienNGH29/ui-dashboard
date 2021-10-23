@@ -21,8 +21,8 @@ function VisitorTable({ classes }) {
   return (
     <div className={classes}>
       <div className="box">
-        <div class="table-responsive table-height">
-          <table class="table table-striped table-borderless">
+        <div className="table-responsive table-height">
+          <table className="table table-striped table-borderless">
             <thead>
               <tr>
                 <th scope="col">Visitor</th>
