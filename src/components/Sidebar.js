@@ -11,7 +11,7 @@ function Sidebar(props) {
 
   return (
     <>
-      <aside className="aside-main d-none d-lg-block">
+      <aside className="aside-main d-none d-lg-flex">
         <div className="aside-header">
           <a href="/">
             <img src="/logo.svg" alt="" />
