@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
@@ -7,8 +6,6 @@ import AdminDashboard from "./pages/Dashboard";
 import AdminExhibitorList from "./pages/ExhibitorList";
 import AdminVisitorList from "./pages/VisitorList";
 import AdminProfile from "./pages/Profile";
-
-Admin.propTypes = {};
 
 function Admin(props) {
   const match = useRouteMatch();

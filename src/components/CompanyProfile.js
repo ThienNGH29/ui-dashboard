@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaRegSave } from "react-icons/fa";
 
 CompanyProfile.propTypes = {
   classes: PropTypes.string,

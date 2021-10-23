@@ -10,14 +10,6 @@ ChartBoard.defaultProps = {
   classes: "col-12 col-lg-8",
 };
 
-function getHours(day) {
-  const arr = [];
-  for (let i = 0; i < day; i += 1) {
-    arr.push(i);
-  }
-  return arr;
-}
-
 function ChartBoard({ classes }) {
   const [options, setOptions] = useState({
     chart: {
