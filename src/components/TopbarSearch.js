@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { BsSearch } from "react-icons/bs";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { BsSearch } from "react-icons/bs";
 import RightCreateModal from "./RightCreateModal";
 
 TopbarSearch.propTypes = {
@@ -19,11 +19,6 @@ TopbarSearch.defaultProps = {
 };
 
 function TopbarSearch({ classes, searchString, hasDropdown, hasCreate }) {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     <div className={classes}>
       <div className="box">

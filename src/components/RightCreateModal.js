@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Offcanvas } from "react-bootstrap";
-
-RightCreateModal.propTypes = {};
 
 function RightCreateModal(props) {
   const [show, setShow] = useState(false);

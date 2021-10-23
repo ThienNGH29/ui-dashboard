@@ -1,14 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
-import TopbarSearch from "../../../components/TopbarSearch";
+import ChartBoard from "../../../components/ChartBoard";
 import TopbarTitle from "../../../components/TopbarTitle";
-
-AdminDashboard.propTypes = {};
+import TopList from "../../../components/TopList";
 
 function AdminDashboard(props) {
   return (
     <>
       <TopbarTitle title="Event-15" hasDropdown />
+
+      <ChartBoard />
+      <TopList title="Top Exhibitors" />
     </>
   );
 }
