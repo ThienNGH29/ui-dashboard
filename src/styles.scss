@@ -5,7 +5,10 @@ $body-color: #323232;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 $font-family-base: "Poppins", var(--bs-font-sans-serif);
 $border-radius: 1rem;
+$border-radius-sm: $border-radius * 0.875;
+$border-radius-lg: $border-radius * 1.25;
 $primary: #6c5dd3;
+$info: #4d69fa;
 
 @import "~bootstrap/scss/bootstrap.scss";
 
@@ -18,17 +21,55 @@ $primary: #6c5dd3;
 .main-layout {
   padding-top: var(--bs-gutter-x, 0.75rem);
   padding-bottom: var(--bs-gutter-x, 0.75rem);
-  height: 100vh;
 }
 
 .main-layout-inner {
   height: 100%;
   margin-left: 235px;
   position: relative;
+  min-height: calc(100vh - (var(--bs-gutter-x, 0.75rem) * 2));
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  position: fixed;
+  width: calc(100% - 265px);
+  bottom: var(--bs-gutter-x, 0.75rem);
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: rem-calc(13);
+    line-height: 1;
+  }
+  strong {
+    font-size: rem-calc(15);
+  }
+}
+
+.box {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: $border-radius;
+  box-shadow: 0 1.6rem 3rem rgba(0, 0, 0, 0.1);
 }
 
 .btn {
   font-weight: 600;
+  &-info {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 .form-control {
@@ -44,6 +85,30 @@ $primary: #6c5dd3;
 .icon-fw {
   width: 1.28571429em;
   text-align: center;
+}
+
+.btn-primary.dropdown-toggle {
+  background: #e9e9ea;
+  color: #05050b;
+  border: solid 1px rgba(#05050b, 0.1);
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.show > .btn-primary.dropdown-toggle {
+  opacity: 0.7;
+}
+
+.dropdown-menu {
+  border: 0;
+  box-shadow: 0 1.6rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.form-select {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 // LOGIN
@@ -167,7 +232,8 @@ $primary: #6c5dd3;
         a {
           display: flex;
           align-items: center;
-          padding: rem-calc(15) rem-calc(8);
+          padding: rem-calc(10) rem-calc(8);
+          margin: rem-calc(5) 0;
           color: #fff;
           text-decoration: none;
           line-height: 1;
@@ -227,5 +293,108 @@ $primary: #6c5dd3;
         opacity: 0.5;
       }
     }
+  }
+}
+
+// TOPBAR
+.topbar {
+  display: flex;
+  margin-left: rem-calc(-10);
+  margin-right: rem-calc(-10);
+  .topbar-item {
+    padding: 0 rem-calc(10);
+    position: relative;
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        width: 1px;
+        height: 70%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9ea7b0;
+      }
+    }
+  }
+  .topbar-title {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    h2 {
+      margin: 0;
+      font-size: rem-calc(22);
+      font-weight: 600;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.searchbar {
+  flex: 1 0 auto;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  svg {
+    color: $primary;
+  }
+  input {
+    margin-left: rem-calc(10);
+    border: 0;
+    background: transparent;
+    font-size: rem-calc(15);
+    outline: none;
+    box-shadow: none;
+    flex: 1 0 auto;
+    &::placeholder {
+      opacity: 0.7;
+      font-weight: 600;
+    }
+  }
+}
+
+.dropdown-wrap {
+  .dropdown-toggle {
+    font-size: rem-calc(14);
+    font-weight: 500;
+    min-width: 200px;
+  }
+  .dropdown-item {
+    font-size: rem-calc(14);
+  }
+}
+
+.add-item {
+  .btn {
+    font-size: rem-calc(14);
+    font-weight: 400;
+    min-width: 100px;
+  }
+}
+
+// OFFCANVAS
+.offcanvas-body {
+  & > form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .offcanvas-inner {
+      flex: 1 0 auto;
+      overflow: auto;
+      max-height: calc(100% - 55px);
+    }
+    .btn {
+      font-weight: 500;
+    }
+  }
+}
+.offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(0.3rem);
+  will-change: backdrop-filter;
+  &.show {
+    opacity: 1;
   }
 }

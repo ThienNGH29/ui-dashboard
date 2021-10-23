@@ -1,14 +1,18 @@
-import { Route, Switch } from 'react-router-dom';
-import Layout from './pages/Layout';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
+import { Redirect, Route, Switch } from "react-router-dom";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Admin from "./roles/Admin";
+import Exhibitor from "./roles/Exhibitor";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" component={Layout} exact />
-        <Route path="/login" component={Login} />
+        <Redirect from="/" to="/login" exact />
+
+        <Route path="/login" component={Login} exact />
+        <Route path="/admin" component={Admin} />
+        <Route path="/exhibitor" component={Exhibitor} />
 
         <Route component={NotFound} />
       </Switch>
