@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Dropdown } from "react-bootstrap";
+import { BsPencil, BsTrash } from "react-icons/bs";
 import { Offcanvas } from "react-bootstrap";
 
-function RightCreateModal(props) {
+function RightEditmodal(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -9,80 +11,103 @@ function RightCreateModal(props) {
 
   return (
     <>
-      <div className="topbar-item add-item" onClick={handleShow}>
-        <button className="btn btn-info">Create</button>
-      </div>
+      <Dropdown>
+        <Dropdown.Toggle variant="btn edit-button">
+          <span>...</span>
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={handleShow}>
+            <BsPencil className="me-2" />
+            <span>Edit</span>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <BsTrash className="me-2" />
+            <span>Delete</span>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
 
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className="ml-1">Create Exhibitor</Offcanvas.Title>
+          <Offcanvas.Title className="ml-1">Update Exhibitor</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <form>
             <div className="offcanvas-inner">
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-name">
+                <label className="form-label" htmlFor="edit-name">
                   Name<span className="text-danger">*</span>
                 </label>
                 <input
-                  id="create-name"
+                  id="edit-name"
                   type="text"
                   className="form-control"
                 ></input>
               </div>
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-email">
+                <label className="form-label" htmlFor="edit-email">
                   Email<span className="text-danger">*</span>
                 </label>
                 <input
-                  id="create-email"
+                  id="edit-email"
                   type="email"
                   className="form-control"
                 ></input>
               </div>
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-website">
+                <label className="form-label" htmlFor="edit-website">
                   Website
                 </label>
                 <input
-                  id="create-website"
+                  id="edit-website"
                   type="text"
                   className="form-control"
                 ></input>
               </div>
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-industry">
+                <label className="form-label" htmlFor="edit-industry">
                   Industry
                 </label>
-                <select id="create-industry" className="form-select">
+                <select id="edit-industry" className="form-select">
                   <option>Aerospace</option>
                   <option>2</option>
                   <option>3</option>
                 </select>
               </div>
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-password">
+                <label className="form-label" for="formFile">
+                  Brochure
+                </label>
+                <input
+                  type="file"
+                  id="formFile"
+                  className="form-control"
+                ></input>
+              </div>
+              <div className="mb-4 mx-1">
+                <label className="form-label" htmlFor="edit-password">
                   Password<span className="text-danger">*</span>
                 </label>
                 <input
-                  id="create-password"
+                  id="edit-password"
                   type="password"
                   className="form-control"
                 ></input>
               </div>
               <div className="mb-4 mx-1">
-                <label className="form-label" htmlFor="create-repassword">
+                <label className="form-label" htmlFor="edit-repassword">
                   Repeat Password<span className="text-danger">*</span>
                 </label>
                 <input
-                  id="create-repassword"
+                  id="edit-repassword"
                   type="password"
                   className="form-control"
                 ></input>
               </div>
             </div>
             <button type="submit" className="btn btn-info btn-block mt-3 mx-1">
-              CREATE
+              UPDATE
             </button>
           </form>
         </Offcanvas.Body>
@@ -91,4 +116,4 @@ function RightCreateModal(props) {
   );
 }
 
-export default RightCreateModal;
+export default RightEditmodal;

@@ -30,7 +30,9 @@ function TopbarSearch({ classes, searchString, hasDropdown, hasCreate }) {
           {hasDropdown && (
             <div className="topbar-item dropdown-wrap">
               <Dropdown>
-                <Dropdown.Toggle>Event-15</Dropdown.Toggle>
+                <Dropdown.Toggle variant="outlined-info">
+                  Event-15
+                </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item href="/">Event-14</Dropdown.Item>
                   <Dropdown.Item href="/">Event-12</Dropdown.Item>

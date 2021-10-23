@@ -1,13 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-AdminVisitorList.propTypes = {};
+import TopbarSearch from "../../../components/TopbarSearch";
+import VisitorTable from "../../../components/VisitorTable";
 
 function AdminVisitorList(props) {
   return (
-    <div>
-      <p>AdminVisitorList</p>
-    </div>
+    <>
+      <TopbarSearch searchString="Search visitors..." hasDropdown />
+
+      <VisitorTable />
+    </>
   );
 }
 

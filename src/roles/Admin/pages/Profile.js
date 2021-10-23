@@ -1,13 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-AdminProfile.propTypes = {};
+import AdminInfo from "../../../components/AdminInfo";
+import ChangePassword from "../../../components/ChangePassword";
 
 function AdminProfile(props) {
   return (
-    <div>
-      <p>AdminProfile</p>
-    </div>
+    <>
+      <AdminInfo />
+      <ChangePassword />
+    </>
   );
 }
 

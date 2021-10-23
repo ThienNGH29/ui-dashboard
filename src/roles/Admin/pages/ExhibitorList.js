@@ -1,13 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TopbarSearch from "../../../components/TopbarSearch";
-
-AdminExhibitorList.propTypes = {};
+import ExhibitorTable from "../../../components/ExhibitorTable";
 
 function AdminExhibitorList(props) {
   return (
     <>
-      <TopbarSearch hasDropdown hasCreate />
+      <TopbarSearch searchString="Search exhibitor..." hasDropdown hasCreate />
+
+      <ExhibitorTable />
     </>
   );
 }
